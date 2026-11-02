@@ -7,6 +7,29 @@
     <link rel="stylesheet" href="estilos.css">
     
 <body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDGISQo6w0KpEHcwG0XzFXp5jZXY4dBkB0",
+    authDomain: "testpag.firebaseapp.com",
+    projectId: "testpag",
+    storageBucket: "testpag.firebasestorage.app",
+    messagingSenderId: "511076344914",
+    appId: "1:511076344914:web:50794fc2c271921e72ab8b",
+    measurementId: "G-FQQCBTWDL3"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
    <div class="form-container">
         <h2>Ingrese sus datos</h2>
         <form id="contact-form">
