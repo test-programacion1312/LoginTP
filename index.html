@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="estilos.css">
-    
-<body>
-<script type="module">
+    <link rel="stylesheet" href="script.js">
+    <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-analytics.js";
@@ -30,6 +29,8 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
+    
+<body>
    <div class="form-container">
         <h2>Ingrese sus datos</h2>
         <form id="contact-form">
@@ -37,10 +38,10 @@
             <input type="email" id="email" name="email" required>
 
             <label>Contraseña:</label>
-            <input type="password" id="cont" name="cont" required>
+            <input type="password" id="password" name="password" required>
 
 
-            <button type="submit" id="button">Ingresar</button>
+            <button onclick="iniciarSesion()" type="submit" id="button">Ingresar</button>
             <br><br>
   <label for="registrar"><a href="registro.html">Registrar</a></label>
   <br><br>
@@ -49,4 +50,5 @@
 </div>
 </div>
 </body>
+
 </html>
