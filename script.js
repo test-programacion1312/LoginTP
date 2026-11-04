@@ -14,6 +14,7 @@ if (form) {
       .then((userCredential) => {
         window.location.href = "sape.html"
         // Esto te redirije a la pagina en blanco asi al toke roque
+        //lol
       })
       .catch((error) => {
         alert("Error de acceso: " + error.message);
