@@ -1,4 +1,4 @@
-import '.Firebase/scriptfirebase.js';
+import 'scriptfirebase.js';
 
 function registrarUsuario(email, password) {
   createUserWithEmailAndPassword(auth, email, password)
