@@ -1,4 +1,5 @@
-import { initializeApp } from 'firebase/app'
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDGISQo6w0KpEHcwG0XzFXp5jZXY4dBkB0",
@@ -11,7 +12,5 @@ const firebaseConfig = {
   measurementId: "G-FQQCBTWDL3"
 };
 
-
 const app = initializeApp(firebaseConfig);
-
-console.log(app)
+export const auth = getAuth(app);
