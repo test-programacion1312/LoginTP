@@ -1,3 +1,5 @@
+import '.Firebase/scriptfirebase.js';
+
 function iniciarSesion(email, password) {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {

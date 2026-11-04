@@ -1,3 +1,5 @@
+import '.Firebase/scriptfirebase.js';
+
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
 const auth = getAuth();
