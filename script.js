@@ -1,4 +1,4 @@
-import '.Firebase/scriptfirebase.js';
+import 'scriptfirebase.js';
 
 function iniciarSesion(email, password) {
   signInWithEmailAndPassword(auth, email, password)
