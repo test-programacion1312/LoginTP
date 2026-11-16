@@ -1,7 +1,14 @@
 import { auth } from "./scriptfirebase.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
+import { initializeApp } from "https://gstatic.com";
+import { getAuth, onAuthStateChanged } from "https://gstatic.com";
+import { getFirestore, doc, getDoc, setDoc } from "https://gstatic.com";
 
 const form = document.getElementById("contact-form");
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
 
 if (form) {
   form.addEventListener("submit", (e) => {
