@@ -6,7 +6,6 @@ import { getFirestore, doc, getDoc, setDoc } from "https://gstatic.com";
 
 const form = document.getElementById("contact-form");
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 const db = getFirestore(app);
 
 
