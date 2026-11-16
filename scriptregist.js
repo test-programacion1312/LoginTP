@@ -24,5 +24,13 @@ if (form) {
       .catch((error) => {
         alert("Error al registrar: " + error.message);
       });
+
+        async function guardarUsuarioEnDB(user) {
+            const userRef = doc(db, "usuarios", user.uid);
+            await setDoc(userRef, {
+            email: user.email,
+        rol: "usuario" // Por defecto todos son usuarios normales
+  });
+}
   });
 }
