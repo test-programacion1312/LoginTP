@@ -1,13 +1,9 @@
 import { auth } from "./scriptfirebase.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
-import { initializeApp } from "https://gstatic.com";
-import { getAuth, onAuthStateChanged } from "https://gstatic.com";
-import { getFirestore, doc, getDoc, setDoc } from "https://gstatic.com";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "./firebase";
 
 const form = document.getElementById("contact-form");
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
 
 if (form) {
   form.addEventListener("submit", (e) => {
@@ -31,12 +27,18 @@ if (form) {
         alert("Error al registrar: " + error.message);
       });
 
-        async function guardarUsuarioEnDB(user) {
-            const userRef = doc(db, "usuarios", user.uid);
-            await setDoc(userRef, {
-            email: user.email,
-        rol: "usuario" // Por defecto todos son usuarios normales
-  });
+     async function saveUserProfile(userId, name, role) {
+  try {
+    // Saves a user document under the 'usuarios' collection
+    await setDoc(doc(db, "usuarios", userId), {
+      nombre: name,
+      rol: role,
+      creadoEn: new Date()
+    });
+    console.log("Perfil de usuario guardado con éxito!");
+  } catch (error) {
+    console.error("Error al guardar el perfil: ", error);
+  }
 }
   });
 }
